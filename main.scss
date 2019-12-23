@@ -19,7 +19,8 @@ $darkBlue: hsl(232, 13%, 33%);
 /// Body Copy
 body{
   display:flex;
-  align-items: center;
+  align-items: flex-start;
+  align-content: flex-start;
   justify-content: center;
   flex-flow: row wrap;
   font-size: 15px;
@@ -47,7 +48,7 @@ h2{
 }
 
 header{
-  margin:0px auto 65px;
+  margin:80px auto 35px;
   text-align:center;
   order:1;
 }
@@ -63,20 +64,24 @@ label{
 
 .faux-checkbox{ 
   order:3; 
-  width:60px;
+  width:55px;
   height: 32px;
   @include linear-gradient(90deg);
   border-radius: 16px;
   margin: 0 25px;
   padding: 3px;
+  position: relative;
   &:before{
     content:'';
+    position: absolute;
+    left:4px;
+    top:4px;
     display:block;
-    height:26px;
-    width:26px;
+    height:24px;
+    width:24px;
     background:white;
     border-radius:14px;
-    transition: all 0.2s;
+    transition: all 0.2s ease-out;
     will-change: transform;
   }
 }
@@ -89,7 +94,7 @@ label{
     & + .faux-checkbox + main .price .monthly{ display:flex; }
     & + .faux-checkbox{
       &:before{
-        transform: translateX(100%);
+        transform: translateX(23px);
       }
     }
   }
@@ -97,13 +102,21 @@ label{
 
 main{
   order:5;
-  margin:0 auto;
+  margin:70px auto 0;
   display:flex;
   align-items: center;
   justify-content: center;
+  @media(max-width: 1076px){
+    display: block;
+  }
   article{
     flex: 0 0 350px;
+    max-width: 350px;
+    margin: 0;
     text-align: center;
+    @media(max-width: 1076px){
+      margin: 0 auto 30px;
+    }
   }
 }
 
@@ -113,11 +126,13 @@ main{
   border-radius: 10px;
   box-shadow: 0px 8px 20px lighten($lightBlue, 20%);
   &.featured{
-    box-shadow: none;
     position: relative;
     z-index: 2;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    @media(min-width: 1077px){
+      padding-top: 50px;
+      padding-bottom: 50px;
+      box-shadow: none;
+    }
     @include linear-gradient(140deg);
     h2,ul,.price span{
       color: white;
@@ -137,12 +152,16 @@ main{
     }
   }
   &.pre-featured{
-    border-bottom-right-radius: 0px;
-    border-top-right-radius: 0px;
+    @media(min-width: 1077px){
+      border-bottom-right-radius: 0px;
+      border-top-right-radius: 0px;
+    }
   }
   &.post-featured{
-    border-bottom-left-radius: 0px;
-    border-top-left-radius: 0px;
+    @media(min-width: 1077px){
+      border-bottom-left-radius: 0px;
+      border-top-left-radius: 0px;
+    }
   }
   .price{
     margin-top:0px;
@@ -196,8 +215,13 @@ main{
 
 footer{
   order:6;
-  position: absolute;
-  bottom:10px;
-  width: 100%;
-  left:0px;
+  margin-top:20px;
+  margin-top:10px;
+  @media(min-width: 1077px){
+    position: absolute;
+    bottom:10px;
+    width: 100%;
+    left:0px;
+    margin:0px!important;
+  }
 }
