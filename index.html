@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <link href="reset.css" rel="stylesheet">
+  <link href="main.css" rel="stylesheet">
   
-  <title>Frontend Mentor | [Challenge Name Here]</title>
+  <title>Frontend Mentor | Pricing Component With Toggle</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
@@ -16,37 +19,60 @@
 </head>
 <body>
 
-  Our Pricing
-  Annually
-  Monthly
+  <header>
+    <h1>Our Pricing</h1>
+  </header>
 
-  Basic
-  &dollar;19.99
-  &dollar;199.99
-  500 GB Storage
-  2 Users Allowed
-  Send up to 3 GB
-  Learn More
+  <label class="monthly" for="price-toggle">Annually</label>
+  <label class="annually" for="price-toggle">Monthly</label>
+  <input id="price-toggle" type="checkbox" />
+  <label class="faux-checkbox" for="price-toggle"></label>
 
-  Professional
-  &dollar;24.99
-  &dollar;249.99
-  1 TB Storage
-  5 Users Allowed
-  Send up to 10 GB
-  Learn More
-
-  Master
-  &dollar;39.99
-  &dollar;399.99
-  2 TB Storage
-  10 Users Allowed
-  Send up to 20 GB
-  Learn More
+  <main>
+    <article class="card card-basic pre-featured">
+      <h2>Basic</h2>
+      <div class="price">
+        <span class="monthly"><small>&dollar;</small>19.99</span>
+        <span class="annually"><small>&dollar;</small>199.99</span>
+      </div>
+      <ul>
+        <li>500 GB Storage</li>
+        <li>2 Users Allowed</li>
+        <li>Send up to 3 GB</li>
+      </ul>
+      <a href="#" class="btn">Learn More</a>
+    </article>
+    <article class="card card-professional featured">
+      <h2>Professional</h2>
+      <div class="price">
+        <span class="monthly"><small>&dollar;</small>24.99</span>
+        <span class="annually"><small>&dollar;</small>249.99</span>
+      </div>
+      <ul>
+        <li>1 TB Storage</li>
+        <li>5 Users Allowed</li>
+        <li>Send up to 10 GB</li>
+      </ul>
+      <a href="#" class="btn">Learn More</a>
+    </article>
+    <article class="card card-master post-featured">
+      <h2>Master</h2>
+      <div class="price">
+        <span class="monthly"><small>&dollar;</small>39.99</span>
+        <span class="annually"><small>&dollar;</small>399.99</span>
+      </div>
+      <ul>
+        <li>2 TB Storage</li>
+        <li>10 Users Allowed</li>
+        <li>Send up to 20 GB</li>
+      </ul>
+      <a href="#" class="btn">Learn More</a>
+    </article>
+</main>
   
-  <div class="attribution">
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    Coded by <a href="https://www.dashcroft.co.uk">David Ashcroft</a>.
+  </footer>
 </body>
 </html>
